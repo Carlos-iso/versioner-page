@@ -1,0 +1,36 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2095_2)">
+<path d="M216 0H40C17.9086 0 0 17.9086 0 40V216C0 238.091 17.9086 256 40 256H216C238.091 256 256 238.091 256 216V40C256 17.9086 238.091 0 216 0Z" fill="url(#paint0_linear_2095_2)"/>
+<path opacity="0.04" d="M0 128H256" stroke="white" stroke-width="0.4"/>
+<path opacity="0.04" d="M128 0V256" stroke="white" stroke-width="0.4"/>
+<g filter="url(#filter0_f_2095_2)">
+<path d="M76 82L128 174L180 82" stroke="url(#paint1_linear_2095_2)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g filter="url(#filter1_f_2095_2)">
+<path d="M128 186C132.971 186 137 181.971 137 177C137 172.029 132.971 168 128 168C123.029 168 119 172.029 119 177C119 181.971 123.029 186 128 186Z" fill="#C4B5FD"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_2095_2" x="58.998" y="64.998" width="138.004" height="126.002" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="3" result="effect1_foregroundBlur_2095_2"/>
+</filter>
+<filter id="filter1_f_2095_2" x="113" y="162" width="30" height="30" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="3" result="effect1_foregroundBlur_2095_2"/>
+</filter>
+<linearGradient id="paint0_linear_2095_2" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1E1B4B"/>
+<stop offset="1" stop-color="#0F0F1A"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2095_2" x1="76" y1="82" x2="167.313" y2="185.223" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A78BFA"/>
+<stop offset="1" stop-color="#7C3AED"/>
+</linearGradient>
+<clipPath id="clip0_2095_2">
+<rect width="256" height="256" fill="white"/>
+</clipPath>
+</defs>
+</svg>
