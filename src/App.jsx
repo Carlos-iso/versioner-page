@@ -125,6 +125,7 @@ export default function App() {
           <a href="#como-funciona" className="text-sm text-[#6b7280] hover:text-white transition-colors hidden sm:block">Como funciona</a>
           <a href="#comandos"      className="text-sm text-[#6b7280] hover:text-white transition-colors hidden sm:block">Comandos</a>
           <a href="#instalacao"   className="text-sm text-[#6b7280] hover:text-white transition-colors hidden sm:block">Instalação</a>
+          <a href="#cli"          className="text-sm text-[#6b7280] hover:text-white transition-colors hidden sm:block">CLI interativo</a>
           <a
             href="https://www.npmjs.com/package/@kinetnode/versioner"
             target="_blank"
@@ -336,6 +337,92 @@ git push`}</CodeBlock>
           </p>
         </div>
       </section>
+
+      {/* versioner-cli */}
+      <Section id="cli">
+        <SectionTitle tag="versioner-cli">Modo interativo</SectionTitle>
+        <p className="text-[#6b7280] text-center max-w-xl mx-auto mb-12 -mt-4">
+          Powered by <span className="text-[#a78bfa] font-mono">cliplay</span> — navegue pelos comandos com o teclado, sem precisar lembrar flags.
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-8 items-center">
+          {/* TUI mockup */}
+          <div className="rounded-xl bg-[#0d0d16] border border-[#2d2550] overflow-hidden font-mono text-sm">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#2d2550] bg-[#1a1630]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+              <span className="text-xs text-[#4b5563] mx-auto">versioner-cli</span>
+            </div>
+            <div className="p-4">
+              <div className="text-[#4b5563] text-xs mb-3">Selecione um comando  <span className="text-[#2d2550]">↑↓ navegar · enter selecionar · q sair</span></div>
+              <div className="space-y-1">
+                {[
+                  { cmd: 'build',     desc: 'Incrementa build e publica', active: true },
+                  { cmd: 'minor',     desc: 'Incrementa minor e build',   active: false },
+                  { cmd: 'major',     desc: 'Incrementa major, zera minor', active: false },
+                  { cmd: 'status',    desc: 'Mostra versão e estado git', active: false },
+                  { cmd: 'log',       desc: 'Lista commits recentes',     active: false },
+                  { cmd: 'changelog', desc: 'Gera CHANGELOG.md',          active: false },
+                ].map(({ cmd, desc, active }) => (
+                  <div key={cmd} className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${active ? 'bg-[#7c3aed]/20 border border-[#7c3aed]/30' : 'border border-transparent'}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${active ? 'bg-[#a78bfa]' : 'bg-[#2d2550]'}`}></span>
+                    <span className={`w-20 ${active ? 'text-[#c4b5fd]' : 'text-[#4b5563]'}`}>{cmd}</span>
+                    <span className="text-[#374151] text-xs">{desc}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#1a1630] text-xs text-[#374151]">
+                <span className="text-[#534AB7]">versioner-cli</span> · cliplay theme
+              </div>
+            </div>
+          </div>
+
+          {/* Info */}
+          <div className="space-y-6">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-lg bg-[#7c3aed]/10 border border-[#7c3aed]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-[#a78bfa] text-sm font-bold">↑↓</span>
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Navegação por teclado</p>
+                <p className="text-[#6b7280] text-sm">Setas para mover, enter para executar, q para sair. Sem precisar memorizar nenhum comando.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-lg bg-[#7c3aed]/10 border border-[#7c3aed]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-[#a78bfa] text-sm">✦</span>
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Powered by cliplay</p>
+                <p className="text-[#6b7280] text-sm">Interface temática construída com cliplay, o TUI acoplável da kinetnode.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-8 h-8 rounded-lg bg-[#7c3aed]/10 border border-[#7c3aed]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-[#a78bfa] text-sm font-mono">=</span>
+              </div>
+              <div>
+                <p className="text-white font-medium mb-1">Mesmos resultados</p>
+                <p className="text-[#6b7280] text-sm">Todos os comandos do versioner disponíveis — só a forma de interagir muda.</p>
+              </div>
+            </div>
+            <div className="pt-2">
+              <CodeBlock copy="npm install -g @kinetnode/versioner-cli">
+                npm install -g @kinetnode/versioner-cli
+              </CodeBlock>
+              <a
+                href="https://www.npmjs.com/package/@kinetnode/versioner-cli"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-lg border border-[#2d2550] text-sm font-mono text-[#a78bfa] hover:border-[#7c3aed] hover:bg-[#7c3aed]/10 transition-colors"
+              >
+                npm ↗ @kinetnode/versioner-cli
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Footer */}
       <footer className="px-6 py-12 border-t border-[#2d2550]">
